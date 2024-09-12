@@ -42,25 +42,25 @@ Using the product table, write a query that outputs the product_id and product_n
 columns and add a column called prod_qty_type_condensed that displays the word “unit” 
 if the product_qty_type is “unit,” and otherwise displays the word “bulk.” */
 SELECT product_id, product_name,
-      CASE prod_qty_type
-          WHEN prod_qty_type = 'unit' THEN 'unit'
+      CASE product_qty_type
+          WHEN product_qty_type = 'unit' THEN 'unit'
           ELSE 'bulk'
       END AS prod_qty_type_condensed
-  FROM products;
+  FROM product;
 
 /* 2. We want to flag all of the different types of pepper products that are sold at the market. 
 add a column to the previous query called pepper_flag that outputs a 1 if the product_name 
 contains the word “pepper” (regardless of capitalization), and otherwise outputs 0. */
 SELECT product_id, product_name,
-      CASE prod_qty_type
-          WHEN prod_qty_type = 'unit' THEN 'unit'
+      CASE product_qty_type
+          WHEN product_qty_type = 'unit' THEN 'unit'
           ELSE 'bulk'
       END AS prod_qty_type_condensed,
       CASE
           WHEN LOWER(product_name) LIKE '%pepper%' THEN 1
           ELSE 0
       END AS pepper_flag
-  FROM products;
+  FROM product;
 
 --JOIN
 /* 1. Write a query that INNER JOINs the vendor table to the vendor_booth_assignments table on the 
