@@ -12,7 +12,8 @@ of customers for them to give stickers to, sorted by last name, then first name.
 
 HINT: This query requires you to join two tables, use an aggregate function, and use the HAVING keyword. */
 SELECT customer.customer_id, customer.customer_last_name, customer.customer_first_name, 
-       SUM(customer_purchases.quantity * customer_purchases.cost_to_customer_per_qty) AS total_amount_spent
+       SUM(customer_purchases.quantity * customer_purchases.cost_to_customer_per_qty) AS total_amount_spent [USE CASE TO ENSURE SUM DATA IS SAME TYPE]
+FROM customer_purchases
   FROM customer
 INNER JOIN customer_purchases ON customer.customer_id = customer_purchases.customer_id
 GROUP BY customer.customer_id
@@ -49,7 +50,7 @@ Remember that money spent is quantity*cost_to_customer_per_qty.
 
 HINTS: you will need to AGGREGATE, GROUP BY, and filter...
 but remember, STRFTIME returns a STRING for your WHERE statement!! */
-SELECT customer_id, SUM(quantity * cost_to_customer_per_qty) AS total_amount_spent
+SELECT customer_id, SUM(quantity * cost_to_customer_per_qty) AS total_amount_spent [USE CASE TO ENSURE SUM DATA IS SAME TYPE]
 FROM customer_purchases
 WHERE STRFTIME('%m', market_date) = '04' 
   AND STRFTIME('%Y', market_date) = '2019'
