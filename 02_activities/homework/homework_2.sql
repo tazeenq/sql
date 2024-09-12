@@ -69,3 +69,9 @@ SELECT vendor.vendor_name, vendor_booth_assignments.market_date, vendor.vendor_i
   FROM vendor
 INNER JOIN vendor_booth_assignments ON vendor.vendor_id = vendor_booth_assignments.vendor_id
 ORDER BY vendor.vendor_name, vendor_booth_assignments.market_date;
+
+/*alternatively, if we want to display all the columns from both the tables joined we can use this query: */
+SELECT *, vendor.vendor_name, vendor_booth_assignments.market_date, vendor.vendor_id
+  FROM vendor
+INNER JOIN vendor_booth_assignments ON vendor.vendor_id = vendor_booth_assignments.vendor_id
+ORDER BY vendor.vendor_name, vendor_booth_assignments.market_date;
