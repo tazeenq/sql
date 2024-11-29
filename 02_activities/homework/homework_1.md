@@ -76,3 +76,11 @@ Please do not pick the exact same tables that I have already diagramed. For exam
 	-  ![01_farmers_market_conceptual_model.png](./images/01_farmers_market_conceptual_model.png)
 - The column names can be found in a few spots (DB Schema window in the bottom right, the Database Structure tab in the main window by expanding each table entry, at the top of the Browse Data tab in the main window)
 
+
+
+#Tazeen Q 
+This is an image with a logic model showing the relationship between two tables: customer and customer_purchases. 
+The tables have a one to many relationship. The table name, column  names, and relationship type are shown in the image.
+![Logic Model: customer and customer_purchases](https://github.com/user-attachments/assets/63695b7f-08a4-453d-9ac6-964f809ea46a)
+
+
